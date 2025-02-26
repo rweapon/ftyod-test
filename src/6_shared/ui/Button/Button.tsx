@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground shadow hover:bg-primary-hover",
+          "bg-primary text-primary-foreground shadow hover:opacity-90 active:bg-primary-hover",
       },
       size: {
         default: "py-4 px-10",

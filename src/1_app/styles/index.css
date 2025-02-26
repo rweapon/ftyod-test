@@ -12,6 +12,9 @@
       url("./fonts/italic/tactic-sans-black-italic.ttf") format("woff"),
       url("./fonts/italic/tactic-sans-black-italic.ttf") format("truetype"),
       url("./fonts/italic/tactic-sans-black-italic.ttf") format("svg");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
   }
   @font-face {
     font-family: "Inter";
@@ -155,22 +158,25 @@
   :root {
     line-height: 1;
     font-size: 16px;
-    --background: 0, 0%, 100%;
-    --foreground: 0, 0%, 0%;
+    --background: 220, 33%, 4%;
+    --foreground: 0, 0%, 100%;
     --paragraph: 0, 4%, 95%;
     --muted: 350 79% 32%;
     --muted-foreground: 350 33% 47%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2, 47.4%, 11.2%;
+    color: hsl(218, 20%, 8%);
+    --popover: 218, 20%, 8%;
+    --popover-foreground: 0, 0%, 100%;
     --border: 0, 0%, 0%;
     --input: 0, 0%, 0%;
-    --card: 0, 0%, 100%;
-    --card-foreground: 0, 0%, 0%;
+    --card: 214, 24%, 6%;
+    --card-foreground: 0, 0%, 100%;
     --primary: 346, 98%, 46%;
     --primary-foreground: 0, 0%, 100%;
     --primary-hover: 347, 81%, 35%;
     --secondary: 29, 54%, 44%;
     --secondary-foreground: 0, 0%, 100%;
+    --scheduled: 25, 98%, 46%;
+    --progress: 108, 62%, 42%;
     --accent: 19, 34%, 20%;
     --accent-foreground: 36, 67%, 82%;
     --destructive: 0, 100%, 39%;
@@ -190,6 +196,10 @@
     @apply font-sans bg-background text-foreground;
   }
 
+  main {
+    @apply relative py-8 md:py-12;
+  }
+
   a,
   button,
   input,
@@ -199,7 +209,18 @@
   }
 
   button,
-  input {
+  input,
+  span {
     line-height: 1 !important;
+  }
+}
+
+@layer components {
+  .container {
+    @apply relative w-full max-w-[unset] px-10;
+  }
+
+  .card__stats {
+    @apply flex items-center justify-center gap-2 [&_span]:font-semibold [&_span]:text-base;
   }
 }

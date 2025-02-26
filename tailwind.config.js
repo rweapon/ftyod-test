@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ["class"],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -33,6 +34,8 @@ export default {
         background: "hsla(var(--background))",
         paragraph: "hsla(var(--paragraph))",
         foreground: "hsla(var(--foreground))",
+        scheduled: "hsla(var(--scheduled))",
+        progress: "hsla(var(--progress))",
         primary: {
           DEFAULT: "hsla(var(--primary))",
           hover: "hsla(var(--primary-hover))",
