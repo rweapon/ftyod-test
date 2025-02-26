@@ -1,3 +1,205 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Tactic Sans";
+    src:
+      url("./fonts/italic/tactic-sans-black-italic.ttf")
+        format("embedded-opentype"),
+      url("./fonts/italic/tactic-sans-black-italic.ttf") format("woff2"),
+      url("./fonts/italic/tactic-sans-black-italic.ttf") format("woff"),
+      url("./fonts/italic/tactic-sans-black-italic.ttf") format("truetype"),
+      url("./fonts/italic/tactic-sans-black-italic.ttf") format("svg");
+  }
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_28pt-Thin.ttf") format("truetype")
+        url("./fonts/normal/Inter_28pt-Thin.ttf") format("woff2"),
+      url("./fonts/normal/Inter_28pt-Thin.ttf") format("woff"),
+      url("./fonts/normal/Inter_28pt-Thin.ttf") format("truetype"),
+      url("./fonts/normal/Inter_28pt-Thin.ttf") format("svg");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_18pt-Regular.ttf") format("truetype")
+        url("./fonts/normal/Inter_18pt-Regular.ttf") format("woff2"),
+      url("./fonts/normal/Inter_18pt-Regular.ttf") format("woff"),
+      url("./fonts/normal/Inter_18pt-Regular.ttf") format("truetype"),
+      url("./fonts/normal/Inter_18pt-Regular.ttf") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_18pt-Medium.ttf") format("truetype")
+        url("./fonts/normal/Inter_18pt-Medium.ttf") format("woff2"),
+      url("./fonts/normal/Inter_18pt-Medium.ttf") format("woff"),
+      url("./fonts/normal/Inter_18pt-Medium.ttf") format("truetype"),
+      url("./fonts/normal/Inter_18pt-Medium.ttf") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_18pt-SemiBold.ttf") format("truetype")
+        url("./fonts/normal/Inter_18pt-SemiBold.ttf") format("woff2"),
+      url("./fonts/normal/Inter_18pt-SemiBold.ttf") format("woff"),
+      url("./fonts/normal/Inter_18pt-SemiBold.ttf") format("truetype"),
+      url("./fonts/normal/Inter_18pt-SemiBold.ttf") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_18pt-Bold.ttf") format("truetype")
+        url("./fonts/normal/Inter_18pt-Bold.ttf") format("woff2"),
+      url("./fonts/normal/Inter_18pt-Bold.ttf") format("woff"),
+      url("./fonts/normal/Inter_18pt-Bold.ttf") format("truetype"),
+      url("./fonts/normal/Inter_18pt-Bold.ttf") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/normal/Inter_18pt-ExtraBold.ttf") format("truetype")
+        url("./fonts/normal/Inter_18pt-ExtraBold.ttf") format("woff2"),
+      url("./fonts/normal/Inter_18pt-ExtraBold.ttf") format("woff"),
+      url("./fonts/normal/Inter_18pt-ExtraBold.ttf") format("truetype"),
+      url("./fonts/normal/Inter_18pt-ExtraBold.ttf") format("svg");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/italic/Inter18pt-Italic.ttf") format("woff2"),
+      url("./fonts/italic/Inter18pt-Italic.ttf") format("woff"),
+      url("./fonts/italic/Inter18pt-Italic.ttf") format("truetype"),
+      url("./fonts/italic/Inter18pt-Italic.ttf") format("svg");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/italic/Inter18pt-MediumItalic.ttf") format("woff2"),
+      url("./fonts/italic/Inter18pt-MediumItalic.ttf") format("woff"),
+      url("./fonts/italic/Inter18pt-MediumItalic.ttf") format("truetype"),
+      url("./fonts/italic/Inter18pt-MediumItalic.ttf") format("svg");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/italic/Inter18pt-SemiBoldItalic.ttf") format("woff2"),
+      url("./fonts/italic/Inter18pt-SemiBoldItalic.ttf") format("woff"),
+      url("./fonts/italic/Inter18pt-SemiBoldItalic.ttf") format("truetype"),
+      url("./fonts/italic/Inter18pt-SemiBoldItalic.ttf") format("svg");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/italic/Inter18pt-BoldItalic.ttf") format("woff2"),
+      url("./fonts/italic/Inter18pt-BoldItalic.ttf") format("woff"),
+      url("./fonts/italic/Inter18pt-BoldItalic.ttf") format("truetype"),
+      url("./fonts/italic/Inter18pt-BoldItalic.ttf") format("svg");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("./fonts/italic/Inter18pt-ExtraBoldItalic.ttf") format("woff2"),
+      url("./fonts/italic/Inter18pt-ExtraBoldItalic.ttf") format("woff"),
+      url("./fonts/italic/Inter18pt-ExtraBoldItalic.ttf") format("truetype"),
+      url("./fonts/italic/Inter18pt-ExtraBoldItalic.ttf") format("svg");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+}
+
+@layer base {
+  :root {
+    line-height: 1;
+    font-size: 16px;
+    --background: 0, 0%, 100%;
+    --foreground: 0, 0%, 0%;
+    --paragraph: 0, 4%, 95%;
+    --muted: 350 79% 32%;
+    --muted-foreground: 350 33% 47%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2, 47.4%, 11.2%;
+    --border: 0, 0%, 0%;
+    --input: 0, 0%, 0%;
+    --card: 0, 0%, 100%;
+    --card-foreground: 0, 0%, 0%;
+    --primary: 346, 98%, 46%;
+    --primary-foreground: 0, 0%, 100%;
+    --primary-hover: 347, 81%, 35%;
+    --secondary: 29, 54%, 44%;
+    --secondary-foreground: 0, 0%, 100%;
+    --accent: 19, 34%, 20%;
+    --accent-foreground: 36, 67%, 82%;
+    --destructive: 0, 100%, 39%;
+    --destructive-foreground: 0, 0%, 0%;
+    --ring: 215, 20.2%, 65.1%;
+    --radius: 0.5rem;
+    --container-padding-x: 40px;
+    --container-width: 1478px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply font-sans bg-background text-foreground;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  svg * {
+    @apply font-sans duration-300;
+  }
+
+  button,
+  input {
+    line-height: 1 !important;
+  }
+}
