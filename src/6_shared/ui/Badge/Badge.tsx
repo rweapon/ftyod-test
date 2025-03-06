@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@shared/lib/utils";
+import { StatusVariants } from "@entities/matches";
 
 const badgeVariants = cva(
   "inline-flex items-center justify-center rounded min-w-24 text-nowrap px-2.5 py-1 text-xs font-semibold",
@@ -18,12 +19,6 @@ const badgeVariants = cva(
   }
 );
 
-enum BadgeVariants {
-  Scheduled = "Match preparing",
-  Ongoing = "Live",
-  Finished = "Finished",
-}
-
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     Required<VariantProps<typeof badgeVariants>> {}
@@ -31,7 +26,7 @@ export interface BadgeProps
 function Badge({ className, variant, ...props }: BadgeProps) {
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props}>
-      {BadgeVariants[variant ?? "Scheduled"]}
+      {StatusVariants[variant ?? "Scheduled"]}
     </div>
   );
 }
