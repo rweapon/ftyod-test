@@ -30,10 +30,16 @@ export const matchesApi = createApi({
         try {
           const result = await queryFulfilled;
           const response = await result.data;
+
+          if (!response.data.matches.length) {
+            throw new Error("Список матчей пуст");
+          }
+
           dispatch(setMatches(response.data.matches));
           console.log("Мачти успешно получены!");
         } catch (err) {
-          console.error("Произошла ошибка");
+          console.error("Произошла ошибка:", err);
+          dispatch(setMatches([]));
         }
       },
     }),

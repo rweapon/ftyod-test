@@ -5,11 +5,11 @@ type Props = { team: Team };
 export default function TeamStats({ team }: Props) {
   return (
     <div className="text-foreground/40 [&_span]:text-foreground">
-      <div className="w-full flex flex-col md:flex-row gap-2 mb-2">
+      <div className="w-full flex gap-2 mb-2">
         {team.players.map((player) => (
           <div
             key={player.username}
-            className="flex-grow flex justify-between gap-2 bg-popover rounded-md py-2 px-3"
+            className="flex-grow flex flex-col 2xl:flex-row justify-between gap-2 bg-popover rounded-md py-2 px-3"
           >
             <div className="card__stats">
               <img
@@ -25,7 +25,7 @@ export default function TeamStats({ team }: Props) {
           </div>
         ))}
       </div>
-      <div className="w-full flex justify-between bg-popover rounded-md p-4">
+      <div className="w-full flex justify-evenly bg-popover rounded-md p-3 xl:p-4">
         <p className="card__stats">
           Очков:
           <span>
@@ -33,10 +33,12 @@ export default function TeamStats({ team }: Props) {
             {team.points}
           </span>
         </p>
+        <hr className="cursor"/>
         <p className="card__stats">
           Место:
           <span>{team.place}</span>
         </p>
+        <hr />
         <p className="card__stats">
           Всего убийств:
           <span>{team.total_kills}</span>

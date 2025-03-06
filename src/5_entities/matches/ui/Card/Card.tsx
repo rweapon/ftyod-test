@@ -14,12 +14,12 @@ export default function Card({ match }: Props) {
     match;
   return (
     <AccordionItem value={title + time}>
-      <AccordionTrigger className="*:flex *:items-center *:gap-3">
+      <AccordionTrigger className="card__trigger-mobile ">
         <div>
           <img
             src={TeamIcon}
             alt={`Логотип ${awayTeam.name}`}
-            className="size-12"
+            className="size-7 md:size-12"
           />
           {awayTeam.name}
         </div>
@@ -32,12 +32,18 @@ export default function Card({ match }: Props) {
           <img
             src={TeamIcon}
             alt={`Логотип ${homeTeam.name}`}
-            className="size-12"
+            className="size-7 md:size-12"
           />
         </div>
       </AccordionTrigger>
-      <AccordionContent>
+      <AccordionContent className="flex-col lg:flex-row ">
         <TeamStats team={awayTeam} />
+        <div className="lg:hidden text-foreground/10 relative">
+          <hr className="" />
+          <span className="text-foreground/20 bg-card px-3 absolute left-1/2 t-1/2 -translate-x-1/2 -translate-y-1/2">
+            VS
+          </span>
+        </div>
         <TeamStats team={homeTeam} />
       </AccordionContent>
     </AccordionItem>

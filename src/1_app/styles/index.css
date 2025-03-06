@@ -213,14 +213,24 @@
   span {
     line-height: 1 !important;
   }
+
+  hr {
+    @apply border-foreground/10;
+  }
 }
 
 @layer components {
   .container {
-    @apply relative w-full max-w-[unset] px-10;
+    @apply relative w-full max-w-[unset] px-4 md:px-8 lg:px-10;
   }
 
   .card__stats {
-    @apply flex items-center justify-center gap-2 [&_span]:font-semibold [&_span]:text-base;
+    @apply flex items-center justify-center gap-2 text-xs sm:text-sm [&_span]:font-semibold [&_span]:text-sm sm:[&_span]:text-base;
+  }
+}
+
+@layer utilities {
+  .card__trigger-mobile {
+    @apply [&[data-state=open]>svg]:hidden md:[&[data-state=open]>svg]:block;
   }
 }

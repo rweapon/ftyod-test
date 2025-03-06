@@ -25,14 +25,12 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       {...props}
-      className="flex flex-grow items-center gap-2 transition-all text-left [&[data-state=open]>svg]:rotate-180"
+      className={cn(
+        "flex flex-grow items-center flex-col md:flex-row gap-2 transition-all text-left [&[data-state=open]>svg]:rotate-180 pb-2 md:pb-0",
+        className
+      )}
     >
-      <div
-        className={cn(
-          "relative flex flex-grow items-center justify-between gap-4 py-5 text-base font-semibold",
-          className
-        )}
-      >
+      <div className="relative w-full flex flex-grow items-center justify-between gap-4 pt-5 py-3 md:py-5 text-base font-semibold empty:hidden *:flex *:items-center *:gap-3 *:text-sm *:sm:text-base ">
         {children}
       </div>
       <ChevronDown className="size-7 shrink-0 text-card-foreground transition-transform duration-200" />
@@ -50,7 +48,10 @@ const AccordionContent = React.forwardRef<
     className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
-    <div className={cn("flex flex-col 2xl:flex-row gap-8 pb-4 pt-0 *:flex-1", className)}>{children}</div>
+    <div className={cn("flex gap-8 pb-2 md:pb-4 pt-0 *:flex-1", className)}>
+      {children}
+    </div>
+    <AccordionTrigger className="md:hidden" />
   </AccordionPrimitive.Content>
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;

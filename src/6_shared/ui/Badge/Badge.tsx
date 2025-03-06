@@ -18,18 +18,20 @@ const badgeVariants = cva(
   }
 );
 
+enum BadgeVariants {
+  Scheduled = "Match preparing",
+  Ongoing = "Live",
+  Finished = "Finished",
+}
+
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
+    Required<VariantProps<typeof badgeVariants>> {}
 
 function Badge({ className, variant, ...props }: BadgeProps) {
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props}>
-      {variant === "Scheduled"
-        ? "Match preparing"
-        : variant === "Ongoing"
-          ? "Live"
-          : "Finished"}
+      {BadgeVariants[variant ?? "Scheduled"]}
     </div>
   );
 }
