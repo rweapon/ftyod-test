@@ -1,4 +1,11 @@
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@shared/ui/Select/Select";
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -16,4 +23,9 @@ export {
   AccordionItem,
   AccordionTrigger,
   SpinnerWrapper,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 };

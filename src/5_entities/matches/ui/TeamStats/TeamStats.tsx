@@ -5,11 +5,11 @@ type Props = { team: Team };
 export default function TeamStats({ team }: Props) {
   return (
     <div className="text-foreground/40 [&_span]:text-foreground">
-      <div className="w-full flex gap-2 mb-2">
+      <div className="w-full flex flex-col min-[420px]:flex-row gap-2 mb-2">
         {team.players.map((player) => (
           <div
             key={player.username}
-            className="flex-grow flex flex-col 2xl:flex-row justify-between gap-2 bg-popover rounded-md py-2 px-3"
+            className="flex-grow flex min-[420px]:flex-col 2xl:flex-row justify-between gap-2 bg-popover rounded-md py-2 px-3"
           >
             <div className="card__stats">
               <img
