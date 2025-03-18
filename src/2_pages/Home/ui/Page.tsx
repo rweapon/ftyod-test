@@ -1,6 +1,6 @@
 import { useAppSelector } from "@app/appStore";
 import { Card, useGetMatchesMutation } from "@entities/matches";
-import { CACHE_KEYS } from "@shared/constants";
+import { CACHE_KEYS } from "@shared/model/config";
 import { Accordion, SpinnerWrapper } from "@shared/ui";
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import { Team } from "@entities/matches/model/types";
-import PlayerIcon from "@shared/assets/player-icon/icon.png";
+import PlayerIcon from "@shared/ui/assets/player-icon/icon.png";
 
 type Props = { team: Team };
 export default function TeamStats({ team }: Props) {
@@ -33,7 +33,7 @@ export default function TeamStats({ team }: Props) {
             {team.points}
           </span>
         </p>
-        <hr className="cursor"/>
+        <hr className="cursor" />
         <p className="card__stats">
           Место:
           <span>{team.place}</span>

@@ -1,6 +1,7 @@
 import { Match } from "@entities/matches";
 import TeamStats from "@entities/matches/ui/TeamStats/TeamStats";
-import TeamIcon from "@shared/assets/team-icon/icon.png";
+import TeamIcon from "@shared/ui/assets/team-icon/icon.png";
+import AnimatedNumbers from "react-animated-numbers";
 import {
   AccordionContent,
   AccordionItem,
@@ -12,6 +13,7 @@ type Props = { match: Match };
 export default function Card({ match }: Props) {
   const { awayTeam, homeTeam, awayScore, homeScore, title, time, status } =
     match;
+
   return (
     <AccordionItem value={title + time}>
       <AccordionTrigger className="card__trigger-mobile ">
@@ -23,8 +25,11 @@ export default function Card({ match }: Props) {
           />
           {awayTeam.name}
         </div>
-        <div className="flex-col !gap-1 text-xl ">
-          {awayScore} : {homeScore}
+        <div className="flex-col !gap-1 text-xl">
+          <div className="flex items-center gap-2">
+            <AnimatedNumbers animateToNumber={awayScore} /> :
+            <AnimatedNumbers animateToNumber={homeScore} />
+          </div>
           <Badge variant={status} />
         </div>
         <div>

@@ -1,7 +1,6 @@
 import {
   matchesApi,
   useGetMatchesMutation,
-  
 } from "@entities/matches/api/matchesApi";
 import {
   MatchesState,
@@ -9,12 +8,12 @@ import {
   Match,
   Player,
   Team,
-  StatusVariants,
-  MatchFilters,
   Status,
 } from "@entities/matches/model/types";
-import matchesReducer, { filterMatches } from "./model/matchesSlice";
+import matchesReducer from "./model/matchesSlice";
 import Card from "@entities/matches/ui/Card/Card";
+import { useFilterMatches } from "@entities/matches/api/publicApi";
+import { MatchFilters, StatusVariants } from "@entities/matches/model/config";
 
 export {
   matchesApi,
@@ -23,13 +22,6 @@ export {
   useGetMatchesMutation,
   Card,
   StatusVariants,
-  filterMatches
+  useFilterMatches,
 };
-export type {
-  GetMatchesResponse,
-  MatchesState,
-  Match,
-  Player,
-  Team,
-  Status,
-};
+export type { GetMatchesResponse, MatchesState, Match, Player, Team, Status };
