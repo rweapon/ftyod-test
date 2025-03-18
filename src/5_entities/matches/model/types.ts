@@ -1,19 +1,15 @@
-export type MatchesState = {
-  value: Match[];
+import { MatchFilters } from "@entities/matches/model/config";
+
+export type ICustomError = {
+  data: {
+    error: string;
+  };
+  status: number;
 };
 
-export enum MatchFilters {
-  SCHEDULED = "Scheduled",
-  ONGOING = "Ongoing",
-  FINISHED = "Finished",
-  ALL = "All",
-}
-
-export const StatusVariants = {
-  [MatchFilters.SCHEDULED]: "Match preparing",
-  [MatchFilters.ONGOING]: "Live",
-  [MatchFilters.FINISHED]: "Finished",
-  [MatchFilters.ALL]: "Все статусы",
+export type MatchesState = {
+  value: Match[];
+  filter: MatchFilters
 };
 
 export type Status = Exclude<`${MatchFilters}`, "All">;
@@ -46,4 +42,9 @@ export type GetMatchesResponse = {
     matches: Match[];
     ok: boolean;
   };
+};
+
+export type WSGetMatchesResponse = {
+  type: string;
+  data: Match[];
 };

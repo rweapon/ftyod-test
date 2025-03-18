@@ -1,12 +1,16 @@
-import {
-  Match,
-  MatchesState,
-  MatchFilters,
-} from "@entities/matches/model/types";
+import { MatchFilters } from "@entities/matches/model/config";
+import { Match, MatchesState } from "@entities/matches/model/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: MatchesState = {
   value: [],
+  filter: MatchFilters.ALL,
+};
+
+const filterMatches = ({ value, filter }: MatchesState) => {
+  if (filter !== MatchFilters.ALL)
+    return value.filter(({ status }) => status === filter);
+  else return value;
 };
 
 export const matchesSlice = createSlice({
@@ -15,15 +19,14 @@ export const matchesSlice = createSlice({
   reducers: {
     setMatches: (state, action: PayloadAction<Match[]>) => {
       state.value = action.payload;
+      state.value = filterMatches(state);
     },
-    filterMatches: (state, action: PayloadAction<MatchFilters>) => {
-      if (action.payload !== MatchFilters.ALL)
-        state.value = state.value.filter(
-          ({ status }) => status === action.payload
-        );
+    setFilter: (state, action: PayloadAction<MatchFilters>) => {
+      state.filter = action.payload;
+      state.value = filterMatches(state);
     },
   },
 });
 
-export const { setMatches, filterMatches } = matchesSlice.actions;
+export const { setMatches, setFilter } = matchesSlice.actions;
 export default matchesSlice.reducer;
